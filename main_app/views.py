@@ -2,7 +2,18 @@ from django.shortcuts import render
 
 
 finches = [
-  {'name': 'Lolo', 'breed': 'Eurasian bullfinch', 'description': 'furry little demon', 'age': 3},
-  {'name': 'Sachi', 'breed': 'American goldfinch', 'description': 'gentle and loving', 'age': 2},
+  {'name': 'George', 'breed': 'Eurasian bullfinch', 'description': 'not very bright', 'age': 3},
+  {'name': 'Dobbs', 'breed': 'American goldfinch', 'description': 'pretty but loud', 'age': 2},
 ]
 # Create your views here.
+
+def home(request):
+    return render(request, 'home.html')
+
+def about(request):
+    return render(request, 'about.html')
+
+def finches_index(request):
+    return render(request, 'finches/index.html', {
+        'finches': finches
+    })
